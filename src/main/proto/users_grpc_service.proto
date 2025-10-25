@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.example.coroutines";
+
+package com.example.coroutines;
+
+service UserService {
+  rpc getUsers(GetUsersRequest) returns (GetUsersResponse);
+}
+
+message GetUsersRequest {
+  repeated int64 userId = 1;
+}
+
+message GetUsersResponse {
+  repeated User user = 1;
+}
+
+message User {
+  int64 userId = 1;
+  string name = 2;
+}
